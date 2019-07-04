@@ -9,11 +9,12 @@
 </head>
 <body>
 <form action="/connect_wifi" method="post">
-    <select name="ssid" placeholder="SSID">
-        {% for ssid in ssids %}
-            <option value="{{ ssid }}">{{ ssid }}</option>
-        {% endfor %}
-    </select>
+<!--    <select name="ssid" placeholder="SSID">-->
+<!--        {% for ssid in ssids %}-->
+<!--            <option value="{{ ssid }}">{{ ssid }}</option>-->
+<!--        {% endfor %}-->
+<!--    </select>-->
+    <input name="ssid" type="text" placeholder="SSID">
     <br><br>
     <input name="psk" type="password" placeholder="PSK">
     <br><br>
