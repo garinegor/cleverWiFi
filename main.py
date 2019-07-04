@@ -8,5 +8,5 @@ ssids = ["Home", "F808", "Kek"]
 
 @app.route("/")
 def hello():
-
-    return render_template("wifi.html", ssids=ssids)
+	ssids = [network["ssid"] for network in wifi.scan_networks("wlan0")]
+	return render_template("wifi.html", ssids=ssids)
