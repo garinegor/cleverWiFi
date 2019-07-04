@@ -24,7 +24,8 @@ def run_program(rcmd):
 	Runs a program, and it's paramters (e.g. rcmd="ls -lh /var/www")
 	Returns output if successful, or None and logs error if not.
 	"""
-
+	
+	print rcmd
 	cmd = shlex.split(rcmd)
 	executable = cmd[0]
 	executable_options = cmd[1:]
@@ -109,11 +110,13 @@ def add_network(_iface, _parameters):
 	"""
 	Add new network with passed parameters to the end of the networks list. Disables all other networks
 	"""
-	id = run_program("wpa_cli -i %s add_network")[:-1]
+	id = run_program("wpa_cli -i %s add_network" % _iface)[:-1]
 	if id.isdigit():
+		id = int(id)
+		print _parameters
 		for parameter in _parameters:
 			_set_parameter(_iface, id, parameter, _parameters[parameter])
-		enable_network(id)
+		enable_network(_iface, id)
 		return id
 	else:
 		logging.error("Unable to add new network.")

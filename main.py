@@ -1,9 +1,12 @@
 import wifi
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
+iface = wifi.get_wnics()[0]
 ssids = ["Home", "F808", "Kek"]
+
+wrap = lambda s: '"' + s + '"'
 
 
 @app.route("/")
@@ -13,6 +16,10 @@ def hello():
 
 
 @app.route('/save_network', methods=['POST'])
-def save_network(request):
-	wifi.add_network("wlan0", {"ssid": request.ssid, "psk": request.psk})
+def save_network():
+	wifi.add_network(iface, {"ssid": wrap(request.form["ssid"]), "psk": wrap(request.form["psk"])})
+	return redirect("/")
 
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", debug=True)
