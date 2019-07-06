@@ -6,7 +6,7 @@ app = Flask(__name__)
 iface = wifi.get_wnics()[0]
 ssids = ["Home", "F808", "Kek"]
 
-wrap = lambda s: '"' + s + '"'
+wrap = lambda s: '\'"' + s + '"\''
 
 
 @app.route("/")
