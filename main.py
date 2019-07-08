@@ -13,12 +13,14 @@ logging.basicConfig(level=logging.DEBUG,
 
 
 @app.route("/run_command", methods=["POST"])
-def run_command(rcmd):
+def run_command():
 	"""
 	Runs a program, and it's paramters (e.g. rcmd="ls -lh /var/www")
 	Returns output if successful, or None and logs error if not.
 	"""
-	cmd = shlex.split(request.form["command"])
+	print request.data
+	cmd = shlex.split(request.args["command"])
+	print cmd
 	executable = cmd[0]
 	executable_options = cmd[1:]
 
