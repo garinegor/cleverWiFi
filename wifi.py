@@ -48,14 +48,14 @@ def select_network(_iface, _id):
 		_set_parameter(_iface, ids[target_index], "priority", priorities[present_index])
 
 
-def scan_networks(iface, retry=10):
+def scan_networks(_iface, retry=10):
 	"""
 	Grab a list of wireless networks within range, and return a list of dicts describing them.
 	"""
 	while retry > 0:
-		if "OK" in run_program("wpa_cli -i %s scan" % iface):
+		if "OK" in run_program("wpa_cli -i %s scan" % _iface):
 			networks = []
-			r = run_program("wpa_cli -i %s scan_result" % iface).strip()
+			r = run_program("wpa_cli -i %s scan_result" % _iface).strip()
 			if "bssid" in r and len(r.split("\n")) > 1:
 				for line in r.split("\n")[1:]:
 					b, fr, s, f = line.split()[:4]
