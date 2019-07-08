@@ -1,8 +1,0 @@
-2019-07-06 14:37:54 DEBUG wifi.py: Executable 'wpa_cli' returned successfully. First line of response was "network id / ssid / bssid / flags"
-2019-07-06 14:37:54 DEBUG wifi.py: Executable 'wpa_cli' returned successfully. First line of response was "0"
-2019-07-06 14:37:54 DEBUG wifi.py: Executable 'wpa_cli' returned successfully. First line of response was "0"
-2019-07-06 14:37:54 DEBUG wifi.py: Executable 'wpa_cli' returned successfully. First line of response was "0"
-2019-07-06 14:37:54 DEBUG wifi.py: Executable 'wpa_cli' returned successfully. First line of response was "3"
-2019-07-06 14:37:54 DEBUG wifi.py: Executable 'wpa_cli' returned successfully. First line of response was "0"
-2019-07-06 14:37:54 DEBUG wifi.py: Executable 'wpa_cli' returned successfully. First line of response was "OK"
-2019-07-06 14:37:54 DEBUG wifi.py: Executable 'wpa_cli' returned successfully. First line of response was "OK"
