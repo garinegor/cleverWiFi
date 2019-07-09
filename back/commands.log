@@ -1,0 +1,43 @@
+2019-07-09 12:49:20 INFO server.py: Server initialized for eventlet.
+2019-07-09 12:49:20 WARNING _internal.py:  * Debugger is active!
+2019-07-09 12:49:20 INFO _internal.py:  * Debugger PIN: 210-602-923
+2019-07-09 12:49:24 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Sending packet OPEN data {'pingInterval': 25000, 'pingTimeout': 60000, 'upgrades': ['websocket'], 'sid': '7029086af0ce4d9c9b88898c284a8cbb'}
+2019-07-09 12:49:24 INFO server.py: emitting event "after connect" to 7029086af0ce4d9c9b88898c284a8cbb [/]
+2019-07-09 12:49:24 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Sending packet MESSAGE data 2["after connect",{"data":"success"}]
+2019-07-09 12:49:24 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Sending packet MESSAGE data 0
+2019-07-09 12:49:24 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Received request to upgrade to websocket
+2019-07-09 12:49:24 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Received packet MESSAGE data 2["run",{"command":"wpa_cli -i wlan0 list_networks"}]
+2019-07-09 12:49:24 INFO server.py: received event "run" from 7029086af0ce4d9c9b88898c284a8cbb [/]
+2019-07-09 12:49:24 DEBUG main.py: Executable 'wpa_cli' returned successfully. First line of response was "network id / ssid / bssid / flags"
+2019-07-09 12:49:24 INFO server.py: emitting event "success" to 7029086af0ce4d9c9b88898c284a8cbb [/]
+2019-07-09 12:49:24 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Sending packet MESSAGE data 2["success","network id / ssid / bssid / flags\n0\tMGTS_GPON_AFE0\tany\t[DISABLED]\n1\tCOEX Tower\tany\t[CURRENT]\n2\tcleverWeb\tany\t[DISABLED]\n3\tHome\tany\t\n4\tF808\tany\t\n"]
+2019-07-09 12:49:24 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Upgrade to websocket successful
+2019-07-09 12:49:24 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Received packet MESSAGE data 2["run",{"command":"wpa_cli -i wlan0 list_networks"}]
+2019-07-09 12:49:24 INFO server.py: received event "run" from 7029086af0ce4d9c9b88898c284a8cbb [/]
+2019-07-09 12:49:24 DEBUG main.py: Executable 'wpa_cli' returned successfully. First line of response was "network id / ssid / bssid / flags"
+2019-07-09 12:49:24 INFO server.py: emitting event "success" to 7029086af0ce4d9c9b88898c284a8cbb [/]
+2019-07-09 12:49:24 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Sending packet MESSAGE data 2["success","network id / ssid / bssid / flags\n0\tMGTS_GPON_AFE0\tany\t[DISABLED]\n1\tCOEX Tower\tany\t[CURRENT]\n2\tcleverWeb\tany\t[DISABLED]\n3\tHome\tany\t\n4\tF808\tany\t\n"]
+2019-07-09 12:49:37 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Received packet MESSAGE data 2["run",{"command":"wpa_cli -i wlan0 list_networks"}]
+2019-07-09 12:49:37 INFO server.py: received event "run" from 7029086af0ce4d9c9b88898c284a8cbb [/]
+2019-07-09 12:49:37 DEBUG main.py: Executable 'wpa_cli' returned successfully. First line of response was "network id / ssid / bssid / flags"
+2019-07-09 12:49:37 INFO server.py: emitting event "success" to 7029086af0ce4d9c9b88898c284a8cbb [/]
+2019-07-09 12:49:37 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Sending packet MESSAGE data 2["success","network id / ssid / bssid / flags\n0\tMGTS_GPON_AFE0\tany\t[DISABLED]\n1\tCOEX Tower\tany\t[CURRENT]\n2\tcleverWeb\tany\t[DISABLED]\n3\tHome\tany\t\n4\tF808\tany\t\n"]
+2019-07-09 12:49:49 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Received packet PING data None
+2019-07-09 12:49:49 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Sending packet PONG data None
+2019-07-09 12:50:14 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Received packet PING data None
+2019-07-09 12:50:14 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Sending packet PONG data None
+2019-07-09 12:50:33 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Received packet MESSAGE data 2["run",{"command":"test"}]
+2019-07-09 12:50:33 INFO server.py: received event "run" from 7029086af0ce4d9c9b88898c284a8cbb [/]
+2019-07-09 12:50:33 DEBUG main.py: Executable 'test' returned with the error: ""
+2019-07-09 12:50:33 INFO server.py: emitting event "fail" to 7029086af0ce4d9c9b88898c284a8cbb [/]
+2019-07-09 12:50:33 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Sending packet MESSAGE data 2["fail","",""]
+2019-07-09 12:50:39 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Received packet PING data None
+2019-07-09 12:50:39 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Sending packet PONG data None
+2019-07-09 12:51:04 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Received packet PING data None
+2019-07-09 12:51:04 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Sending packet PONG data None
+2019-07-09 12:51:30 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Received packet PING data None
+2019-07-09 12:51:30 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Sending packet PONG data None
+2019-07-09 12:51:56 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Received packet PING data None
+2019-07-09 12:51:56 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Sending packet PONG data None
+2019-07-09 12:52:22 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Received packet PING data None
+2019-07-09 12:52:22 INFO socket.py: 7029086af0ce4d9c9b88898c284a8cbb: Sending packet PONG data None
