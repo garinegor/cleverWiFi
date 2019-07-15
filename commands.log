@@ -1,0 +1,17 @@
+2019-07-15 12:37:00 WARNING _internal.py:  * Debugger is active!
+2019-07-15 12:37:00 INFO _internal.py:  * Debugger PIN: 196-768-708
+2019-07-15 12:53:43 DEBUG main.py: Executable 'ls' returned successfully. First line of response was "README.md"
+2019-07-15 12:53:43 INFO _internal.py: 127.0.0.1 - - [15/Jul/2019 12:53:43] "POST /run?command=ls HTTP/1.1" 200 -
+2019-07-15 12:57:47 DEBUG main.py: Executable 'ls' returned successfully. First line of response was "README.md"
+2019-07-15 12:57:47 INFO _internal.py: 127.0.0.1 - - [15/Jul/2019 12:57:47] "POST /run?command=ls HTTP/1.1" 200 -
+2019-07-15 12:59:07 DEBUG main.py: Executable 'ls' returned successfully. First line of response was "README.md"
+2019-07-15 12:59:07 INFO _internal.py: 127.0.0.1 - - [15/Jul/2019 12:59:07] "POST /run?command=ls HTTP/1.1" 200 -
+2019-07-15 12:59:40 INFO _internal.py: 127.0.0.1 - - [15/Jul/2019 12:59:40] "GET /run?command=ls HTTP/1.1" 405 -
+2019-07-15 12:59:55 DEBUG main.py: Executable 'ls' returned successfully. First line of response was "README.md"
+2019-07-15 12:59:55 INFO _internal.py: 127.0.0.1 - - [15/Jul/2019 12:59:55] "POST /run?command=ls HTTP/1.1" 200 -
+2019-07-15 13:00:31 DEBUG main.py: Executable 'ls' returned successfully. First line of response was "README.md"
+2019-07-15 13:00:31 INFO _internal.py: 127.0.0.1 - - [15/Jul/2019 13:00:31] "POST /run?command=ls HTTP/1.1" 200 -
+2019-07-15 13:01:32 DEBUG main.py: Executable 'ls' returned successfully. First line of response was "README.md"
+2019-07-15 13:01:32 INFO _internal.py: 127.0.0.1 - - [15/Jul/2019 13:01:32] "POST /run?command=ls HTTP/1.1" 200 -
+2019-07-15 13:02:17 DEBUG main.py: Executable 'ls' returned successfully. First line of response was "README.md"
+2019-07-15 13:02:17 INFO _internal.py: 127.0.0.1 - - [15/Jul/2019 13:02:17] "POST /run?command=ls HTTP/1.1" 200 -
