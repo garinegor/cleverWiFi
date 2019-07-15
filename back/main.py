@@ -1,6 +1,7 @@
 import shlex
 import logging
 from flask import Flask, request
+from flask_cors import CORS
 from flask_socketio import SocketIO, emit
 from subprocess import Popen, call, PIPE
 
@@ -11,21 +12,17 @@ logging.basicConfig(level=logging.DEBUG,
                     filemode='w')
 
 app = Flask(__name__)
-socketio = SocketIO(app)
+CORS(app)
 
 
-@socketio.on('connect')
-def test_connect():
-    emit('after connect',  {'data':'success'})
-
-
-@socketio.on("run")
-def run_command(message):
+@app.route("/run", methods=["POST"])
+def run_command():
 	"""
 	Runs a program, and it's paramters (e.g. rcmd="ls -lh /var/www")
 	Returns output if successful, or None and logs error if not.
 	"""
-	cmd = shlex.split(message["command"])
+	print request.values
+	cmd = shlex.split(request.args["command"])
 	executable = cmd[0]
 	executable_options = cmd[1:]
 
@@ -43,12 +40,12 @@ def run_command(message):
 	else:
 		if proc.wait() != 0:
 			logging.debug("Executable '%s' returned with the error: \"%s\"" % (executable, response_stderr))
-			emit("fail", response)
+			return response
 		else:
 			logging.debug("Executable '%s' returned successfully. First line of response was \"%s\"" % (
 			executable, response_stdout.split('\n')[0]))
-			emit("success", response_stdout)
+			return response_stdout
 
 
 if __name__ == "__main__":
-	socketio.run(app, host="0.0.0.0", debug=True)
+	app.run(host="0.0.0.0", debug=True)

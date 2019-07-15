@@ -1,13 +1,9 @@
-var socket = io.connect(location.origin + ":5000");
+function run(command) {
+    return fetch("http://" + location.host + ":5000/run?command=" + command, {
+        method: "POST"})
+        .then(r => r.text());
+}
 
-socket.on("success", function(msg){
-   console.log("complete:\n" + msg);
-});
-
-socket.on("fail", function(msg){
-   console.log("failed:\n" + msg);
-});
-
-function run(command){
-   socket.emit("run", {command: command});
+function get_saved_networks(iface) {
+    var r = run("wpa_cli -i wlan0 list_netowrks");
 }
