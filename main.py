@@ -1,5 +1,5 @@
 import wifi
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, jsonify
 
 app = Flask(__name__)
 
@@ -11,8 +11,17 @@ wrap = lambda s: '\'"' + s + '"\''
 
 @app.route("/")
 def hello():
+    wifi_data = {
+        "pass": "somewifipassword",
+        "own_name": "CLEVERWEB",
+    }
+    return render_template("wifi.html", wifi=wifi_data, navbar_title='network configuration')
+
+
+@app.route("/wifi/available")
+def available():
     ssids = [network["ssid"] for network in wifi.scan_networks("wlan0")]
-    return render_template("wifi.html", ssids=ssids)
+    return jsonify({"available": ssids})
 
 
 @app.route('/save_network', methods=['POST'])

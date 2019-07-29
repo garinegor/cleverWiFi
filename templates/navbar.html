@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top cool-navbar"
+     style="background-color: {{ navbar_color }};">
+    <div class="left-part">
+        <a href=".." class="navbar-brand" style="font-size: 28px; padding: 8px; margin: 0;">Clever Web</a>
+        <span style="color: darkgray; font-size: 1.6em;">:</span>
+        <div class="dropdown">
+            <button style="color: darkgray; font-size: 28px;" class="cool-button" type="button"
+                    id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                {{ navbar_title }}
+            </button>
+        </div>
+    </div>
+    <div class="profile-part">
+        <span>{{ profile_name }}</span>
+        <a href="profile"><img class="navbar-img svg" alt="" src="static/css/svg/profile.svg"/></a>
+        <a href="settings"><img alt="Settings" class="navbar-img svg" style="margin-right: 12px; margin-left: 14px;"
+                                src="static/css/svg//settings.svg"/></a>
+        <a href="docs"><img alt="Documentation" class="navbar-img svg" src="static/css/svg/docs.svg"/></a>
+    </div>
+</nav>
