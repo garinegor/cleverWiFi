@@ -6,7 +6,7 @@
     <script>
         var own_net_name = "{{ wifi.own_name }}";
         const vis_image_url = "/static/css/svg/visible.svg";
-        const invis_image_url = "/static/css/svg/visible.svg";
+        const invis_image_url = "/static/css/svg/invisible.svg";
     </script>
     <!--<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
@@ -23,10 +23,11 @@
 {% include "navbar.html" %}
 <div style="display: flex; align-items: center; justify-content: center; height: calc(100% - 56px);">
     <div style="padding-bottom: 50px;">
-        <div class="title-holder"><h3 id="title">AP</h3><label class="switch">
-            <input id="toggler" onchange="swap(true);" type="checkbox">
-            <span class="slider round"></span>
-        </label></div>
+        <div class="title-holder">
+            <h3 style="display: flex; flex-direction: row;">WiF configuration:&nbsp;
+                <div style="color: #28a745" id="title">Client</div>
+            </h3>
+        </div>
         <div class="form-group col-md-auto">
             <label for="inputSSID">SSID</label>
             <div id="ssid_content">
@@ -51,12 +52,12 @@
                 </div>
             </div>
         </div>
-        <div class="btn-group" style="margin-left: 15px;" role="group">
-            <button id="butt_ref" type="button" onclick="refresh()" class="btn btn-secondary">Refresh</button>
+        <div class="btn-group" style="margin-right: 15px; width: calc(100% - 15px); justify-content: flex-end;" role="group">
+            <button id="butt_ref" type="button" onclick="swap(true);" class="btn btn-light">AP mode</button>
             <button id="butt_save" type="button" onclick="connect()" class="btn btn-success">Connect</button>
         </div>
     </div>
 </div>
-    <script type="text/javascript" src="/static/wifi/wifi.js"></script>
+<script type="text/javascript" src="/static/wifi/wifi.js"></script>
 </body>
 </html>

@@ -17,27 +17,33 @@ function refresh() {
 
 function swap(b) {
     if (b) {
-        document.getElementById('title').innerText = 'Client';
+        document.getElementById('title').innerText = 'AP';
+        document.getElementById('title').style.color = '#17a2b8';
         document.getElementById('ssid_content').innerHTML = '<input onchange="kek()" id="inputSSID" type="text" class="form-control" aria-describedby="ssidHelp"\n' +
             'value="' + own_net_name + '" placeholder="SSID">';
         document.getElementById('ssidHelp2').innerText = 'Your Clever WiFi hotspot configuration';
-        document.getElementById('butt_ref').innerText = 'Reset';
-        document.getElementById('butt_save').innerText = 'Save';
+        document.getElementById('butt_ref').innerText = 'Client mode';
+        document.getElementById('butt_save').innerText = 'Turn on';
+        document.getElementById("butt_save").classList.remove('btn-success');
+        document.getElementById("butt_save").classList.add('btn-info');
         document.getElementById('butt_save').onclick = function () {
             save();
         }
     } else {
-        document.getElementById('title').innerText = 'AP';
+        document.getElementById('title').innerText = 'Client';
+        document.getElementById('title').style.color = '#28a745';
         document.getElementById('ssid_content').innerHTML = '<select id="inputSSID" class="form-control"></select>';
         document.getElementById('ssidHelp2').innerText = 'WiFi hotspot configuration that Clever can connect';
         refresh();
-        document.getElementById('butt_ref').innerText = 'Refresh';
+        document.getElementById("butt_save").classList.add('btn-success');
+        document.getElementById("butt_save").classList.remove('btn-info');
+        document.getElementById('butt_ref').innerText = 'AP mode';
         document.getElementById('butt_save').innerText = 'Connect';
         document.getElementById('butt_save').onclick = function () {
             connect();
         };
     }
-    document.getElementById('toggler').onchange = function () {
+    document.getElementById('butt_ref').onclick = function () {
         swap(!b);
     };
 }

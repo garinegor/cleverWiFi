@@ -192,7 +192,6 @@ body {
     margin: 17px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     min-width: 400px;
 }
 
