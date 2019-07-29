@@ -11,14 +11,14 @@ wrap = lambda s: '\'"' + s + '"\''
 
 @app.route("/")
 def hello():
-	ssids = [network["ssid"] for network in wifi.scan_networks("wlan0")]
-	return render_template("wifi.html", ssids=ssids)
+    ssids = [network["ssid"] for network in wifi.scan_networks("wlan0")]
+    return render_template("wifi.html", ssids=ssids)
 
 
 @app.route('/save_network', methods=['POST'])
 def save_network():
-	wifi.add_network(iface, {"ssid": wrap(request.form["ssid"]), "psk": wrap(request.form["psk"])})
-	return redirect("/")
+    wifi.add_network(iface, {"ssid": wrap(request.form["ssid"]), "psk": wrap(request.form["psk"])})
+    return redirect("/")
 
 
 if __name__ == '__main__':
