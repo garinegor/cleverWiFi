@@ -64,16 +64,6 @@ body {
     scroll-behavior: smooth;
 }
 
-.cool-button {
-    background: none;
-    border: none;
-    outline: none;
-}
-
-.cool-button:focus {
-    outline: none;
-}
-
 .dropdown-item {
     cursor: pointer;
 }
@@ -92,43 +82,8 @@ body {
     height: 100%;
 }
 
-.cool-navbar {
-    height: 56px;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-}
-
-.left-part {
-    display: flex;
-    margin: 0;
-    flex-direction: row;
-    align-items: center;
-    margin-top: -6px;
-}
-
-.profile-part {
-    height: 40px;
-    margin-top: 3px;
-    align-content: center;
-    display: flex;
-    flex-direction: row;
-}
-
-.profile-part span {
-    color: white;
-    font-size: 24px;
-    margin-right: 17px;
-}
-
 .dropdown:hover {
     cursor: pointer;
-}
-
-.navbar-img {
-    width: 36px;
-    height: 36px;
 }
 
 .setting-menu {

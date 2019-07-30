@@ -15,7 +15,26 @@ def hello():
         "pass": "somewifipassword",
         "own_name": "CLEVERWEB",
     }
-    return render_template("wifi.html", wifi=wifi_data, navbar_title='network configuration')
+    return render_template("wifi_config.html", wifi=wifi_data, navbar_title='network configuration')
+
+
+@app.route("/settings")
+def settings():
+    settings_menu = [
+        {
+            'title': 'WiFi',
+            'content': [
+                {'title': 'Configuration', 'template': 'wifi_config.html'}
+            ]
+        }
+    ]
+
+    wifi_data = {
+        "pass": "somewifipassword",
+        "own_name": "CLEVERWEB",
+    }
+
+    return render_template("settings.html", wifi=wifi_data, navbar_title='settings', settings=settings_menu)
 
 
 @app.route("/wifi/available")

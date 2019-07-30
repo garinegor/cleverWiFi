@@ -1,0 +1,52 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.settings-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100% - 56px);
+}
+
+.settings-menu {
+    height: calc(100% - 56px);
+    width: 400px;
+    background-color: #818181;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-ad {
+    height: calc(100% - 56px);
+    width: 400px;
+    background-color: #818181;
+}
+
+.settings-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+@media screen and (max-width: 992px) {
+    .settings-menu {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .settings-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .settings-ad {
+        display: none;
+    }
+}
