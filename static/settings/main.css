@@ -50,3 +50,24 @@ html, body {
         display: none;
     }
 }
+
+.menu-title {
+    color: white;
+    background-color: #686868;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 20px;
+    max-width: 100%;
+}
+
+.submenu-title {
+    color: white;
+    padding: 10px;
+    padding-left: 35px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 20px;
+    max-width: 100%;
+}

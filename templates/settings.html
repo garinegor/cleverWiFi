@@ -13,9 +13,9 @@
 <div class="settings-container">
     <div class="settings-menu">
         {% for menu in settings %}
-            <div>{{ menu.title }}</div>
+            <div class="menu-title">{{ menu.title }}</div>
             {% for submenu in menu.content %}
-                <div>{{ submenu.title }}</div>
+                <div class="submenu-title">{{ submenu.title }}</div>
             {% endfor %}
         {% endfor %}
     </div>
