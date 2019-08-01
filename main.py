@@ -1,11 +1,11 @@
-# import wifi
+import wifi
 from flask import Flask, render_template, request, redirect, jsonify, make_response
 
 response_template = {"data": {}}
 
 app = Flask(__name__)
 
-# iface = wifi.get_wnics()[0]
+iface = wifi.get_wnics()[0]
 ssids = ["Home", "F808", "Kek"]
 
 wrap = lambda s: '\'"' + s + '"\''
@@ -34,7 +34,7 @@ def settings():
 
 @app.route("/wifi/available")
 def available_networks():
-    # ssids = [network["ssid"] for network in wifi.scan_networks("wlan0")]
+    ssids = [network["ssid"] for network in wifi.scan_networks("wlan0")]
     return jsonify({"available": ssids})
 
 
