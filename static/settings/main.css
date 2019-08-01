@@ -3,6 +3,13 @@ html, body {
     height: 100%;
 }
 
+.settings-navbar {
+    width: 100%;
+    height: 56px;
+    display: none;
+    padding-left: 15px;
+}
+
 .settings-container {
     display: flex;
     flex-direction: row;
@@ -16,6 +23,7 @@ html, body {
     background-color: #818181;
     display: flex;
     flex-direction: column;
+    transition: .5s;
 }
 
 .settings-ad {
@@ -34,14 +42,19 @@ html, body {
 
 @media screen and (max-width: 992px) {
     .settings-menu {
-        display: none;
+        z-index: 1000;
+        position: absolute;
+        top: 56px;
+        left: -400px;
     }
-}
-
-
-@media screen and (max-width: 992px) {
-    .settings-menu {
-        display: none;
+    .settings-navbar {
+        position: absolute;
+        right: 0;
+        top: 56px;
+        display: flex;
+    }
+    .settings-content {
+        padding-top: 116px;
     }
 }
 
