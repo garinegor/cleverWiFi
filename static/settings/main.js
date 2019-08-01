@@ -18,6 +18,7 @@ function hideMenu() {
     ad.style.position = 'static';
     ad.style.top = '56px';
     ad.style.right = '0px';
+    ad.style.display = null;
     ad.style.background = '#818181';
     ad.style.width = '400px';
     ad.onclick = function () {
