@@ -25,7 +25,6 @@
             <img onclick="toggleMenu()" src="/static/css/svg/navmenu.svg"/>
         </div>
         {% for menu in settings %}
-            <h2>{{ menu.title }}</h2>
             {% for submenu in menu.content %}
             {% with path=submenu.template %}
                 {% include path %}
