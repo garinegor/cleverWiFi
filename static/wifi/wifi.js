@@ -1,4 +1,4 @@
-refresh();
+//refresh();
 
 function refresh() {
     var req = new XMLHttpRequest();

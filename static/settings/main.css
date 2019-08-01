@@ -40,24 +40,6 @@ html, body {
     padding: 40px;
 }
 
-@media screen and (max-width: 992px) {
-    .settings-menu {
-        z-index: 1000;
-        position: absolute;
-        top: 56px;
-        left: -400px;
-    }
-    .settings-navbar {
-        position: absolute;
-        right: 0;
-        top: 56px;
-        display: flex;
-    }
-    .settings-content {
-        padding-top: 116px;
-    }
-}
-
 @media screen and (max-width: 1400px) {
     .settings-ad {
         display: none;
@@ -83,4 +65,45 @@ html, body {
     overflow: hidden;
     font-size: 20px;
     max-width: 100%;
+}
+
+.my-row {
+    margin: 0;
+}
+
+.center-radio {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+@media screen and (max-width: 992px) {
+    .settings-menu {
+        z-index: 1000;
+        position: absolute;
+        top: 56px;
+        left: -400px;
+    }
+
+    .settings-navbar {
+        position: absolute;
+        right: 0;
+        top: 56px;
+        display: flex;
+    }
+
+    .settings-content {
+        padding-top: 116px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .my-row {
+        justify-content: space-between;
+    }
+
+    .center-radio {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
