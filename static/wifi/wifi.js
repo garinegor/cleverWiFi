@@ -72,8 +72,19 @@ function showPassword() {
 
 function connect() {
     let ssid = document.getElementById('inputSSID').value;
-    let password = document.getElementById('password').value;
-    console.log('Connect', ssid, password);
+    let psk = document.getElementById('password').value;
+
+    fetch("http://" + location.host + "/network/add", {
+        method: "POST",
+        headers:
+            {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+        body: JSON.stringify({ parameters: { ssid: ssid, psk: psk } })
+    })
+        .then(r => { console.log(r) });
+
+    console.log('Connect', ssid, psk);
 }
 
 function save() {

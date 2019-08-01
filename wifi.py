@@ -23,11 +23,14 @@ def add_network(_iface, _parameters):
     """
     Add new network with passed parameters to the end of the networks list. Disables all other networks
     """
-    id = run_program("wpa_cli -i %s add_network")[:-1]
+    id = run_program("wpa_cli -i %s add_network" % _iface)[:-1]
     if id.isdigit():
+        id = int(id)
         for parameter in _parameters:
             _set_parameter(_iface, id, parameter, _parameters[parameter])
-        enable_network(id)
+        enable_network(_iface, id)
+        run_program("wpa_cli -i %s save_config" % _iface)
+
         return id
     else:
         logging.error("Unable to add new network.")
@@ -46,6 +49,7 @@ def select_network(_iface, _id):
     if target_index != present_index:
         _set_parameter(_iface, ids[present_index], "priority", priorities[target_index])
         _set_parameter(_iface, ids[target_index], "priority", priorities[present_index])
+    return True
 
 
 def scan_networks(_iface, retry=10):
@@ -129,7 +133,13 @@ def _set_parameter(_iface, _id, _name, _value):
     """
     Set network parameter value
     """
-    return run_program("wpa_cli -i %s set_network %d %s %s" % (_iface, _id, _name, _value))
+    if not isinstance(_value, int):
+        _value = '\'"' + _value + '"\''
+
+    command = "wpa_cli -i %s set_network %d %s %s" % (_iface, _id, _name, _value)
+    print command
+
+    return run_program(command)
 
 
 def run_program(rcmd):
@@ -182,3 +192,13 @@ def get_wnics():
         if "IEEE" in line:
             ifaces.append(line.split()[0])
     return ifaces
+
+
+def get_mode(_iface):
+    """
+    Get current wifi mode
+    """
+    r = run_program("iwconfig")
+    mode_index = r.find("Mode:")
+
+    return a[mode_index + 5:].split()[0] if mode_index != -1 else None
