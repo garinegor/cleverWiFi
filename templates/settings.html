@@ -5,14 +5,13 @@
     <title>Settings</title>
     <script type="text/javascript" src="/static/js/jquery.min.js"></script>
     <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/static/settings/main.js"></script>
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/settings/main.css">
 </head>
 <body>
 {% include "navbar.html" %}
 <div class="settings-container">
-    <div id="settings-menu" class="settings-menu">
+    <div class="settings-menu">
         {% for menu in settings %}
             <div class="menu-title">{{ menu.title }}</div>
             {% for submenu in menu.content %}
@@ -21,9 +20,6 @@
         {% endfor %}
     </div>
     <div class="settings-content">
-        <div class="settings-navbar">
-            <img onclick="toggleMenu()" src="/static/css/svg/navmenu.svg"/>
-        </div>
         {% for menu in settings %}
             <h2>{{ menu.title }}</h2>
             {% for submenu in menu.content %}
@@ -33,7 +29,7 @@
             {% endfor %}
         {% endfor %}
     </div>
-    <div id="settings-ad" class="settings-ad">
+    <div class="settings-ad">
     </div>
 </div>
 </body>
